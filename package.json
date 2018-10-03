@@ -1,0 +1,24 @@
+{
+  "name": "docker-api-to-compose",
+  "version": "0.0.1",
+  "description": "Generate docker-compose files from Docker API inspect output",
+  "main": "dist/index.js",
+  "types" : "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TripleParity/docker-api-to-compose.git"
+  },
+  "author": "TripleParity",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TripleParity/docker-api-to-compose/issues"
+  },
+  "homepage": "https://github.com/TripleParity/docker-api-to-compose#readme",
+  "devDependencies": {
+    "typescript": "^3.1.1"
+  }
+}
