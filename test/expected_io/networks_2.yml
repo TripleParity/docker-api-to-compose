@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  TehService:
+    image: 'nginx:latest'
+    networks:
+      - mahNet
+networks:
+  mahNet:
+    driver: overlay
+    external: true

@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+  MyService:
+    image: 'nginx:latest'
+    networks:
+      - default
+    volumes:
+      - type: volume
+        source: vol2
+        target: /data
+    deploy:
+      mode: replicated
+      replicas: 1
+networks:
+  default:
+    driver: overlay
+volumes:
+  vol2:
+    external: true

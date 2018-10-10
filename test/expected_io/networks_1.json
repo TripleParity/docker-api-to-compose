@@ -1,0 +1,27 @@
+[
+    {
+        "Spec": {
+            "Labels": {
+                "com.docker.stack.image": "nginx:latest",
+                "com.docker.stack.namespace": "networks_1"
+            },
+            "Name": "networks_1_TehService",
+            "TaskTemplate": {
+                "ContainerSpec": {
+                    "Image": "nginx:latest@sha256:9ad0746d8f2ea6df3a17ba89eca40b48c47066dfab55a75e08e2b70fc80d929e",
+                    "Labels": {
+                        "com.docker.stack.namespace": "networks_1"
+                    }
+                },
+                "Networks": [
+                    {
+                        "Aliases": [
+                            "TehService"
+                        ],
+                        "Target": "zfbgekheqo2ywlpk429gf3gd4"
+                    }
+                ]
+            }
+        }
+    }
+]

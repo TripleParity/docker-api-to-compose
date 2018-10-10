@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+  TehService:
+    image: 'nginx:latest'
+    networks:
+      - someNet
+networks:
+  someNet:
+    driver: overlay

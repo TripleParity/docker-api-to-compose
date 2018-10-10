@@ -1,0 +1,104 @@
+[
+    {
+        "CreatedAt": "2018-10-09T05:50:36.086472451Z",
+        "Endpoint": {
+            "Spec": {
+                "Mode": "vip"
+            },
+            "VirtualIPs": [
+                {
+                    "Addr": "10.0.25.3/24",
+                    "NetworkID": "q7z28e7fm1vx2jdpeedao595c"
+                }
+            ]
+        },
+        "ID": "tuud9cqr5qot1gtnwdj2uoygz",
+        "Spec": {
+            "EndpointSpec": {
+                "Mode": "vip"
+            },
+            "Labels": {
+                "com.docker.stack.image": "nginx:latest",
+                "com.docker.stack.namespace": "volumes_2"
+            },
+            "Mode": {
+                "Replicated": {
+                    "Replicas": 1
+                }
+            },
+            "Name": "volumes_2_MyService",
+            "TaskTemplate": {
+                "ContainerSpec": {
+                    "Image": "nginx:latest@sha256:9ad0746d8f2ea6df3a17ba89eca40b48c47066dfab55a75e08e2b70fc80d929e",
+                    "Isolation": "default",
+                    "Labels": {
+                        "com.docker.stack.namespace": "volumes_2"
+                    },
+                    "Mounts": [
+                        {
+                            "Source": "volumes_2_mydata",
+                            "Target": "/data",
+                            "Type": "volume",
+                            "VolumeOptions": {
+                                "Labels": {
+                                    "com.docker.stack.namespace": "volumes_2"
+                                }
+                            }
+                        },
+                        {
+                            "Source": "/tmp",
+                            "Target": "/opt/app/static",
+                            "Type": "bind"
+                        }
+                    ],
+                    "Privileges": {
+                        "CredentialSpec": null,
+                        "SELinuxContext": null
+                    }
+                },
+                "ForceUpdate": 0,
+                "Networks": [
+                    {
+                        "Aliases": [
+                            "MyService"
+                        ],
+                        "Target": "q7z28e7fm1vx2jdpeedao595c"
+                    }
+                ],
+                "Placement": {
+                    "Platforms": [
+                        {
+                            "Architecture": "amd64",
+                            "OS": "linux"
+                        },
+                        {
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "arm64",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "386",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "ppc64le",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "s390x",
+                            "OS": "linux"
+                        }
+                    ]
+                },
+                "Resources": {},
+                "Runtime": "container"
+            }
+        },
+        "UpdatedAt": "2018-10-09T05:50:36.10369542Z",
+        "Version": {
+            "Index": 110651
+        }
+    }
+]

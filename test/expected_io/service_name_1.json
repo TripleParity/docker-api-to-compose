@@ -1,0 +1,15 @@
+[
+    {
+        "Spec": {
+            "Labels": {
+                "com.docker.stack.namespace": "stack-name"
+            },
+            "Name": "stack-name_myServiceName",
+            "TaskTemplate": {
+                "ContainerSpec": {
+                    "Image": "tripleparity/docks-api:branch-develop@sha256:64a93b632cbac9ef87844fec15bfb97844edb50d71f7037b80bd6b5999fc37dc"
+                }
+            }
+        }
+    }
+]

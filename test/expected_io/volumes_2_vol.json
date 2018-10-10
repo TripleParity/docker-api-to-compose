@@ -1,0 +1,13 @@
+[
+    {
+        "CreatedAt": "2018-10-09T07:50:37+02:00",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.stack.namespace": "volumes_2"
+        },
+        "Mountpoint": "/var/lib/docker/volumes/volumes_2_mydata/_data",
+        "Name": "volumes_2_mydata",
+        "Options": null,
+        "Scope": "local"
+    }
+]

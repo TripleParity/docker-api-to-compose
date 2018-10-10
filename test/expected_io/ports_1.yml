@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  MyServiceName:
+    image: 'nginx:latest'
+    ports:
+      - published: 7125
+        target: 7124
+        protocol: tcp
+        mode: host
+    networks:
+      - default
+    deploy:
+      mode: replicated
+      replicas: 1
+networks:
+  default:
+    driver: overlay

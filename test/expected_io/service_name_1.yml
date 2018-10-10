@@ -1,0 +1,4 @@
+version: '3.3'
+services:
+  myServiceName:
+    image: 'tripleparity/docks-api:branch-develop'

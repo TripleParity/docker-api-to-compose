@@ -1,0 +1,55 @@
+[
+    {
+        "Attachable": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {
+            "292bbf0f2f581e51d2bced72d38a71bcd5c136679c195b09c08a5106042d48fd": {
+                "EndpointID": "81c18c4684d4954e3e0e22701cc1011685fc651e410062aed578217f5a535400",
+                "IPv4Address": "10.0.26.4/24",
+                "IPv6Address": "",
+                "MacAddress": "02:42:0a:00:1a:04",
+                "Name": "volumes_3_MyService.1.q4is2rpe4m780ced1d6tl0gfy"
+            },
+            "lb-volumes_3_default": {
+                "EndpointID": "41852819f4dbd9d60a45c9bf641d4fe029469834e023c5f955b280804d6ae546",
+                "IPv4Address": "10.0.26.2/24",
+                "IPv6Address": "",
+                "MacAddress": "02:42:0a:00:1a:02",
+                "Name": "volumes_3_default-endpoint"
+            }
+        },
+        "Created": "2018-10-09T08:55:35.774859634+02:00",
+        "Driver": "overlay",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Config": [
+                {
+                    "Gateway": "10.0.26.1",
+                    "Subnet": "10.0.26.0/24"
+                }
+            ],
+            "Driver": "default",
+            "Options": null
+        },
+        "Id": "t6hcb7aeoqgonzzsrxndx8nuj",
+        "Ingress": false,
+        "Internal": false,
+        "Labels": {
+            "com.docker.stack.namespace": "volumes_3"
+        },
+        "Name": "volumes_3_default",
+        "Options": {
+            "com.docker.network.driver.overlay.vxlanid_list": "4123"
+        },
+        "Peers": [
+            {
+                "IP": "192.168.0.72",
+                "Name": "7d37cc706d3a"
+            }
+        ],
+        "Scope": "swarm"
+    }
+]

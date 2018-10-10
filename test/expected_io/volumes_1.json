@@ -1,0 +1,94 @@
+[
+    {
+        "CreatedAt": "2018-10-09T05:48:13.127817201Z",
+        "Endpoint": {
+            "Spec": {
+                "Mode": "vip"
+            },
+            "VirtualIPs": [
+                {
+                    "Addr": "10.0.22.3/24",
+                    "NetworkID": "y9cpqvlmnn8oc36l0eepli204"
+                }
+            ]
+        },
+        "ID": "z2wwfliskr0clxa7uhlsfw5dt",
+        "Spec": {
+            "EndpointSpec": {
+                "Mode": "vip"
+            },
+            "Labels": {
+                "com.docker.stack.image": "nginx:latest",
+                "com.docker.stack.namespace": "volumes_1"
+            },
+            "Mode": {
+                "Replicated": {
+                    "Replicas": 1
+                }
+            },
+            "Name": "volumes_1_MyService",
+            "TaskTemplate": {
+                "ContainerSpec": {
+                    "Image": "nginx:latest@sha256:9ad0746d8f2ea6df3a17ba89eca40b48c47066dfab55a75e08e2b70fc80d929e",
+                    "Isolation": "default",
+                    "Labels": {
+                        "com.docker.stack.namespace": "volumes_1"
+                    },
+                    "Mounts": [
+                        {
+                            "Source": "/tmp",
+                            "Target": "/opt/app/static",
+                            "Type": "bind"
+                        }
+                    ],
+                    "Privileges": {
+                        "CredentialSpec": null,
+                        "SELinuxContext": null
+                    }
+                },
+                "ForceUpdate": 0,
+                "Networks": [
+                    {
+                        "Aliases": [
+                            "MyService"
+                        ],
+                        "Target": "y9cpqvlmnn8oc36l0eepli204"
+                    }
+                ],
+                "Placement": {
+                    "Platforms": [
+                        {
+                            "Architecture": "amd64",
+                            "OS": "linux"
+                        },
+                        {
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "arm64",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "386",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "ppc64le",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "s390x",
+                            "OS": "linux"
+                        }
+                    ]
+                },
+                "Resources": {},
+                "Runtime": "container"
+            }
+        },
+        "UpdatedAt": "2018-10-09T05:48:13.162660807Z",
+        "Version": {
+            "Index": 110639
+        }
+    }
+]

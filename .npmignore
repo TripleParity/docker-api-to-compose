@@ -1,1 +1,9 @@
+# Since we are publishing a JS package, I am ignoring these.
+# Correct me if I am wrong.
+
+tsconfig.json
+tslint.json
+.travis.yml
+
 lib/
+test/

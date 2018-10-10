@@ -1,0 +1,160 @@
+[
+    {
+        "CreatedAt": "2018-10-09T05:40:52.301045818Z",
+        "Endpoint": {
+            "Spec": {
+                "Mode": "vip"
+            },
+            "VirtualIPs": [
+                {
+                    "Addr": "10.0.21.3/24",
+                    "NetworkID": "onl58158t4af5puz42jfox67v"
+                }
+            ]
+        },
+        "ID": "jt03v0mllyba0cmz7rytgxhzq",
+        "PreviousSpec": {
+            "EndpointSpec": {
+                "Mode": "vip"
+            },
+            "Labels": {
+                "com.docker.stack.image": "nginx:latest",
+                "com.docker.stack.namespace": "constraints_1"
+            },
+            "Mode": {
+                "Replicated": {
+                    "Replicas": 1
+                }
+            },
+            "Name": "constraints_1_myServiceName",
+            "TaskTemplate": {
+                "ContainerSpec": {
+                    "Image": "nginx:latest@sha256:9ad0746d8f2ea6df3a17ba89eca40b48c47066dfab55a75e08e2b70fc80d929e",
+                    "Isolation": "default",
+                    "Labels": {
+                        "com.docker.stack.namespace": "constraints_1"
+                    },
+                    "Privileges": {
+                        "CredentialSpec": null,
+                        "SELinuxContext": null
+                    }
+                },
+                "ForceUpdate": 0,
+                "Networks": [
+                    {
+                        "Aliases": [
+                            "myServiceName"
+                        ],
+                        "Target": "onl58158t4af5puz42jfox67v"
+                    }
+                ],
+                "Placement": {
+                    "Constraints": [
+                        "node.role == manager"
+                    ],
+                    "Platforms": [
+                        {
+                            "Architecture": "amd64",
+                            "OS": "linux"
+                        },
+                        {
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "arm64",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "386",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "ppc64le",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "s390x",
+                            "OS": "linux"
+                        }
+                    ]
+                },
+                "Resources": {},
+                "Runtime": "container"
+            }
+        },
+        "Spec": {
+            "EndpointSpec": {
+                "Mode": "vip"
+            },
+            "Labels": {
+                "com.docker.stack.image": "nginx:latest",
+                "com.docker.stack.namespace": "constraints_1"
+            },
+            "Mode": {
+                "Replicated": {
+                    "Replicas": 1
+                }
+            },
+            "Name": "constraints_1_myServiceName",
+            "TaskTemplate": {
+                "ContainerSpec": {
+                    "Image": "nginx:latest@sha256:9ad0746d8f2ea6df3a17ba89eca40b48c47066dfab55a75e08e2b70fc80d929e",
+                    "Isolation": "default",
+                    "Labels": {
+                        "com.docker.stack.namespace": "constraints_1"
+                    },
+                    "Privileges": {
+                        "CredentialSpec": null,
+                        "SELinuxContext": null
+                    }
+                },
+                "ForceUpdate": 0,
+                "Networks": [
+                    {
+                        "Aliases": [
+                            "myServiceName"
+                        ],
+                        "Target": "onl58158t4af5puz42jfox67v"
+                    }
+                ],
+                "Placement": {
+                    "Constraints": [
+                        "node.role == manager",
+                        "node.hostname == leonidas"
+                    ],
+                    "Platforms": [
+                        {
+                            "Architecture": "amd64",
+                            "OS": "linux"
+                        },
+                        {
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "arm64",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "386",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "ppc64le",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "s390x",
+                            "OS": "linux"
+                        }
+                    ]
+                },
+                "Resources": {},
+                "Runtime": "container"
+            }
+        },
+        "UpdatedAt": "2018-10-09T05:43:06.182508723Z",
+        "Version": {
+            "Index": 110634
+        }
+    }
+]

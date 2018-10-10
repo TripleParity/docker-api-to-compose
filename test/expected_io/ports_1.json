@@ -1,0 +1,111 @@
+[
+    {
+        "CreatedAt": "2018-10-09T08:20:30.812458881Z",
+        "Endpoint": {
+            "Ports": [
+                {
+                    "Protocol": "tcp",
+                    "PublishMode": "host",
+                    "PublishedPort": 7125,
+                    "TargetPort": 7124
+                }
+            ],
+            "Spec": {
+                "Mode": "vip",
+                "Ports": [
+                    {
+                        "Protocol": "tcp",
+                        "PublishMode": "host",
+                        "PublishedPort": 7125,
+                        "TargetPort": 7124
+                    }
+                ]
+            },
+            "VirtualIPs": [
+                {
+                    "Addr": "10.0.28.3/24",
+                    "NetworkID": "ac2fn3krkhrrmj0pv88qs2644"
+                }
+            ]
+        },
+        "ID": "rtq9yrw30n2bj75n86zfhvpjj",
+        "Spec": {
+            "EndpointSpec": {
+                "Mode": "vip",
+                "Ports": [
+                    {
+                        "Protocol": "tcp",
+                        "PublishMode": "host",
+                        "PublishedPort": 7125,
+                        "TargetPort": 7124
+                    }
+                ]
+            },
+            "Labels": {
+                "com.docker.stack.image": "nginx:latest",
+                "com.docker.stack.namespace": "ports_1"
+            },
+            "Mode": {
+                "Replicated": {
+                    "Replicas": 1
+                }
+            },
+            "Name": "ports_1_MyServiceName",
+            "TaskTemplate": {
+                "ContainerSpec": {
+                    "Image": "nginx:latest@sha256:9ad0746d8f2ea6df3a17ba89eca40b48c47066dfab55a75e08e2b70fc80d929e",
+                    "Isolation": "default",
+                    "Labels": {
+                        "com.docker.stack.namespace": "ports_1"
+                    },
+                    "Privileges": {
+                        "CredentialSpec": null,
+                        "SELinuxContext": null
+                    }
+                },
+                "ForceUpdate": 0,
+                "Networks": [
+                    {
+                        "Aliases": [
+                            "MyServiceName"
+                        ],
+                        "Target": "ac2fn3krkhrrmj0pv88qs2644"
+                    }
+                ],
+                "Placement": {
+                    "Platforms": [
+                        {
+                            "Architecture": "amd64",
+                            "OS": "linux"
+                        },
+                        {
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "arm64",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "386",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "ppc64le",
+                            "OS": "linux"
+                        },
+                        {
+                            "Architecture": "s390x",
+                            "OS": "linux"
+                        }
+                    ]
+                },
+                "Resources": {},
+                "Runtime": "container"
+            }
+        },
+        "UpdatedAt": "2018-10-09T08:20:30.834369404Z",
+        "Version": {
+            "Index": 110687
+        }
+    }
+]

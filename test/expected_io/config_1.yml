@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  MyServiceName:
+    image: 'nginx:latest'
+    networks:
+      - default
+    deploy:
+      mode: replicated
+      replicas: 1
+    configs:
+      - myConfig
+networks:
+  default:
+    driver: overlay
+configs:
+  myConfig:

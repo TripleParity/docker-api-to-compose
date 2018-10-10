@@ -1,0 +1,55 @@
+[
+    {
+        "Attachable": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {
+            "1e4a4a2cec180d2a33064a2a4f20b0f6f38357be9fe50b9f3e38e9a7dadb970f": {
+                "EndpointID": "87206393afc02df87d99fd63c5c9649d239caae3a562705ea63ad75d7712e7a4",
+                "IPv4Address": "10.0.19.4/24",
+                "IPv6Address": "",
+                "MacAddress": "02:42:0a:00:13:04",
+                "Name": "environment_1_2_myServiceName.1.3xzker3qjh2xmaajjnrlz02gr"
+            },
+            "lb-environment_1_2_default": {
+                "EndpointID": "8a5db8b5b757c061c25bac15fb5003669b71e6d8ad5319277b09f13896f8f8d3",
+                "IPv4Address": "10.0.19.2/24",
+                "IPv6Address": "",
+                "MacAddress": "02:42:0a:00:13:02",
+                "Name": "environment_1_2_default-endpoint"
+            }
+        },
+        "Created": "2018-10-09T07:37:23.260742695+02:00",
+        "Driver": "overlay",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Config": [
+                {
+                    "Gateway": "10.0.19.1",
+                    "Subnet": "10.0.19.0/24"
+                }
+            ],
+            "Driver": "default",
+            "Options": null
+        },
+        "Id": "tin6gs8cbbt4vd28v79qpfzcv",
+        "Ingress": false,
+        "Internal": false,
+        "Labels": {
+            "com.docker.stack.namespace": "environment_1_2"
+        },
+        "Name": "environment_1_2_default",
+        "Options": {
+            "com.docker.network.driver.overlay.vxlanid_list": "4116"
+        },
+        "Peers": [
+            {
+                "IP": "192.168.0.72",
+                "Name": "7d37cc706d3a"
+            }
+        ],
+        "Scope": "swarm"
+    }
+]

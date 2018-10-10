@@ -1,0 +1,22 @@
+[
+    {
+        "Spec": {
+            "Labels": {
+                "LABEL_KEY_1": "LABEL_VALUE_1",
+                "LABEL_KEY_2": "LABEL_VALUE_2",
+                "LABEL_KEY_3": "LABEL_VALUE_3",
+                "com.docker.stack.image": "nginx",
+                "com.docker.stack.namespace": "labels_2"
+            },
+            "Name": "labels_2_myServiceName",
+            "TaskTemplate": {
+                "ContainerSpec": {
+                    "Image": "nginx:latest@sha256:9ad0746d8f2ea6df3a17ba89eca40b48c47066dfab55a75e08e2b70fc80d929e",
+                    "Labels": {
+                        "com.docker.stack.namespace": "labels_2"
+                    }
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,73 @@
+[
+    {
+        "CreatedAt": "2018-10-09T05:37:22.887132429Z",
+        "Endpoint": {
+            "Spec": {
+                "Mode": "vip"
+            },
+            "VirtualIPs": [
+                {
+                    "Addr": "10.0.19.3/24",
+                    "NetworkID": "tin6gs8cbbt4vd28v79qpfzcv"
+                }
+            ]
+        },
+        "ID": "d3ch6yym5ef5nycblndcllx4t",
+        "Spec": {
+            "EndpointSpec": {
+                "Mode": "vip"
+            },
+            "Labels": {
+                "com.docker.stack.image": "tripleparity/docks-api:branch-develop",
+                "com.docker.stack.namespace": "environment_1_2"
+            },
+            "Mode": {
+                "Replicated": {
+                    "Replicas": 1
+                }
+            },
+            "Name": "environment_1_2_myServiceName",
+            "TaskTemplate": {
+                "ContainerSpec": {
+                    "Env": [
+                        "ENV_KEY_1=ENV_VALUE_1",
+                        "ENV_KEY_2=ENV_VALUE_2",
+                        "ENV_KEY_3=ENV_VALUE_3"
+                    ],
+                    "Image": "tripleparity/docks-api:branch-develop@sha256:64a93b632cbac9ef87844fec15bfb97844edb50d71f7037b80bd6b5999fc37dc",
+                    "Isolation": "default",
+                    "Labels": {
+                        "com.docker.stack.namespace": "environment_1_2"
+                    },
+                    "Privileges": {
+                        "CredentialSpec": null,
+                        "SELinuxContext": null
+                    }
+                },
+                "ForceUpdate": 0,
+                "Networks": [
+                    {
+                        "Aliases": [
+                            "myServiceName"
+                        ],
+                        "Target": "tin6gs8cbbt4vd28v79qpfzcv"
+                    }
+                ],
+                "Placement": {
+                    "Platforms": [
+                        {
+                            "Architecture": "amd64",
+                            "OS": "linux"
+                        }
+                    ]
+                },
+                "Resources": {},
+                "Runtime": "container"
+            }
+        },
+        "UpdatedAt": "2018-10-09T05:37:22.932473699Z",
+        "Version": {
+            "Index": 110615
+        }
+    }
+]

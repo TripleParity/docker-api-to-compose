@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  myServiceName:
+    image: 'tripleparity/docks-api:branch-develop'
+    networks:
+      - default
+    deploy:
+      mode: replicated
+      replicas: 1
+    environment:
+      - ENV_KEY_1=ENV_VALUE_1
+      - ENV_KEY_2=ENV_VALUE_2
+      - ENV_KEY_3=ENV_VALUE_3
+networks:
+  default:
+    driver: overlay

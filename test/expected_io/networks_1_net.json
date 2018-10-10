@@ -1,0 +1,24 @@
+[
+    {
+        "ConfigOnly": false,
+        "Driver": "overlay",
+        "IPAM": {
+            "Config": [
+                {
+                    "Gateway": "10.0.10.1",
+                    "Subnet": "10.0.10.0/24"
+                }
+            ],
+            "Driver": "default",
+            "Options": null
+        },
+        "Id": "zfbgekheqo2ywlpk429gf3gd4",
+        "Ingress": false,
+        "Internal": false,
+        "Labels": {
+            "com.docker.stack.namespace": "networks_1"
+        },
+        "Name": "networks_1_someNet",
+        "Scope": "swarm"
+    }
+]

@@ -1,0 +1,11 @@
+[
+    {
+        "CreatedAt": "2018-10-09T08:54:59+02:00",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/vol2/_data",
+        "Name": "vol2",
+        "Options": {},
+        "Scope": "local"
+    }
+]
