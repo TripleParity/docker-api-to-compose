@@ -7,3 +7,6 @@ tslint.json
 
 lib/
 test/
+
+.nyc_output/
+coverage/
