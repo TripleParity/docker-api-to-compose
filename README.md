@@ -11,6 +11,22 @@ Generate docker-compose files from Docker API inspect output.
 - Accepts JSON data from docker API v1.37
 - Generates v3.3 docker-compose.yml files
 
+## Usage
+```js
+// TODO: Is this line correct?
+import { compose, getNetworkIds, getVolumeNames } from 'docker-api-to-compose';
+
+const services = getServicesInStack('MyCoolStack');
+
+const networkIds = getNetworkIds(services);
+const networks = inspectNetworks(networkIds);
+
+const volumeNames = getVolumeNames(services);
+const volumes = inspectVolumes(volumes);
+
+const stackFile = compose(services, networks, volumes);
+```
+
 ## Docker Compose Features
 Crossed out features are not compatible with Docker Swarm.
 

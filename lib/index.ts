@@ -2,11 +2,11 @@ import * as yaml from 'js-yaml';
 import * as ComposeModels from './composeModels';
 import * as DockerModels from './dockerModels';
 
-export interface NetworkMap {
+interface NetworkMap {
     [id: string]: DockerModels.Network;
 }
 
-export interface VolumeMap {
+interface VolumeMap {
     [name: string]: DockerModels.Volume;
 }
 
@@ -251,13 +251,57 @@ function parseService(service: DockerModels.Service, networkMap: NetworkMap): Co
 }
 
 /**
+ * Return a list of network IDs that require inspection
+ *
+ * This is required to create a NetworkMap
+ * @param services
+ */
+export function getNetworkIds(services: DockerModels.Service[]): string[] {
+    const result: string[] = [];
+
+    for (const service of services) {
+        if (service.Spec.TaskTemplate.Networks) {
+            for (const net of service.Spec.TaskTemplate.Networks) {
+                result.push(net.Target);
+            }
+        }
+    }
+
+    return result;
+}
+
+/**
+ * Returns volume names to be inspected
+ * @param services
+ */
+export function getVolumeNames(services: DockerModels.Service[]): string[] {
+    const result: string[] = [];
+
+    for (const dockerService of services) {
+        if (dockerService.Spec.TaskTemplate.ContainerSpec.Mounts) {
+            for (const vol of dockerService.Spec.TaskTemplate.ContainerSpec.Mounts) {
+                if (vol.Type === 'volume') {
+                    result.push(vol.Source);
+                }
+            }
+        }
+    }
+
+    return result;
+}
+
+/**
  * Generate a docker-compose string from a list of JSON service documents
  *
  * @param services Array of Services to generate a compose file from
  * @param networks Map of network ID -> network name
  */
-export function compose(services: DockerModels.Service[], networkMap: NetworkMap, volumeMap: VolumeMap): string {
+export function compose(services: DockerModels.Service[],
+                        networks: DockerModels.Network[],
+                        volumes: DockerModels.Volume[]): string {
 
+    const networkMap = createNetworkMap(networks);
+    const volumeMap = createVolumeMap(volumes);
     const stackNetworkMap = createStackNetworkMap(networkMap);
 
     const servicesBlob: {[name: string]: ComposeModels.Service} = {};
@@ -329,7 +373,7 @@ export function compose(services: DockerModels.Service[], networkMap: NetworkMap
  * Creates a map of volume name => volume and normalizes the volume name
  * @param volumes
  */
-export function createVolumeMap(volumes: DockerModels.Volume[]): VolumeMap {
+function createVolumeMap(volumes: DockerModels.Volume[]): VolumeMap {
     const result: {[name: string]: DockerModels.Volume} = {};
 
     for (const vol of volumes) {
@@ -347,31 +391,11 @@ export function createVolumeMap(volumes: DockerModels.Volume[]): VolumeMap {
  * Create a network map to allow generating a docker-compose file
  * @param networks Array of Network objects from Docker
  */
-export function createNetworkMap(networks: DockerModels.Network[]): NetworkMap {
+function createNetworkMap(networks: DockerModels.Network[]): NetworkMap {
     const result: {[id: string]: DockerModels.Network} = {};
 
     for (const net of networks) {
         result[net.Id] = net;
-    }
-
-    return result;
-}
-
-/**
- * Return a list of network IDs that require inspection
- *
- * This is required to create a NetworkMap
- * @param services
- */
-export function getNetworkIds(services: DockerModels.Service[]): string[] {
-    const result: string[] = [];
-
-    for (const service of services) {
-        if (service.Spec.TaskTemplate.Networks) {
-            for (const net of service.Spec.TaskTemplate.Networks) {
-                result.push(net.Target);
-            }
-        }
     }
 
     return result;
