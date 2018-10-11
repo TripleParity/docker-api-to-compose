@@ -8,7 +8,7 @@
     "build": "tsc -p .",
     "lint": "tslint -c tslint.json 'lib/**/*.ts' 'test/**/*.ts'",
     "pretest": "tsc -p .",
-    "test": "nyc mocha --require source-map-support/register dist/test/**/*.spec.js",
+    "test": "nyc mocha dist/test/**/*.spec.js",
     "posttest": "nyc report --reporter=json"
   },
   "repository": {
@@ -28,7 +28,6 @@
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
     "nyc": "^13.0.1",
-    "source-map-support": "^0.5.9",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
     "typescript": "^3.1.1"

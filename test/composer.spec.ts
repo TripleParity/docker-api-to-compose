@@ -1,5 +1,3 @@
-import 'source-map-support/register';
-
 import { expect } from 'chai';
 import * as DockerModels from '../lib/dockerModels';
 import { compose, createNetworkMap, createVolumeMap, NetworkMap, VolumeMap } from '../lib/index';

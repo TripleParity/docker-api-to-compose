@@ -1,5 +1,3 @@
-import 'source-map-support/register';
-
 import * as yaml from 'js-yaml';
 import * as ComposeModels from './composeModels';
 import * as DockerModels from './dockerModels';
